@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="row ">
+        <nav class="navbar navbar-expand-lg bg-black">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="fa-solid fa-snowflake"></i> Navbar <i
+                        class="fa-solid fa-snowflake"></i></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="weather.html">Weather</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    </div>
+    <div class="conatiner-fluid main_header">
+        <div class="row">
+
+            <div class="col-md-10 col-12 mx-auto">
+            <h1 class="h1">CHECK THE WEATHER FOR YOUR CITY</h1>
+
+                <form class="temp_form">
+
+                    <input type="text" id="cityName" placeholder="Enter your city" autocomplete="off">
+                    <input type="submit" value="search" id="submitbutton">
+
+                </form>
+            </div>
+            <dv class="tempform">
+                <div class="top_layer">
+                    <p id="day">Tuesday</p>
+                    <p id="today_data">13 Oct</p>
+                </div>
+                <div class="main_layer ">
+                    <p id="city_name">Get OutPut Here</p>
+                    <div class="middle_layer data_hide">
+                        <p><span id="temp">0</span><sup>0</sup>C</p>
+                        <p id="temp_status"><i class="fa-solid fa-cloud"></i></p>
+                        
+                    </div>
+                </div>
+            </dv>
+        </div>
+    </div>
+    <footer>
+<p> this is my own site</p>   
+ </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="main.js"></script>
+<script>
+
+const getCurrentDay =() =>{
+var weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] ="Monday";
+weekday[2] = "Tuesday";
+weekday[3] ="Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] ="Saturday";
+let currentTime = new Date();
+day=weekday[currentTime.getDay()];
+const days = document.getElementById("day");
+days.innerText=day;
+};
+const today=document.getElementById('today_data')
+let date = new Date().toLocaleDateString("de-DE");
+today.innerText="Date - "+" "+ date;
+getCurrentDay();
+</script>
+</body>
+
+</html>

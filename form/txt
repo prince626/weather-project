@@ -1,0 +1,18 @@
+app.post("/login",async(req,res)=>{
+    try {
+          const email=req.body.email
+            const password=req.body.password
+            const useremail=await Register.findOne({email:email})
+            // res.send(useremail);
+            // console.log(email)
+            if (useremail.password===password) {
+                // window.alert("successfully")
+                res.status(201).render("index")
+            } else {
+                res.send("please valid a email or password")
+            }
+            
+    } catch (e) {
+        console.log("error")
+    }
+})
